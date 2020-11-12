@@ -101,14 +101,14 @@ Emoji表情字符现在在APP已经广泛支持了。但是Mysql的UTF8编码对
     		return sb.toString();
     	}
    
-只需要在入库的时候，调用 **encoder** 编码字符串，查询出库后调用 **decoder** 解码字符串。
+**只需要在入库的时候，调用 encoder 编码字符串，查询出库后调用 decoder 解码字符串。**
 
 ## 问题 ##
 1. **过滤**
 
 	这里过滤的范围是在网上查的：
-   
-	` Pattern pattern = Pattern.compile ("[\ud800\udc00-\udbff\udfff\ud800-\udfff]",Pattern.UNICODE_CASE | Pattern.CASE_INSENSITIVE ) ;`
+
+	`Pattern pattern = Pattern.compile ("[\ud800\udc00-\udbff\udfff\ud800-\udfff]",Pattern.UNICODE_CASE | Pattern.CASE_INSENSITIVE ) ;`
 	
 	需要过滤其他的可以修改这个正则表达式。
 
